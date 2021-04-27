@@ -3,7 +3,7 @@ resource "aws_cloudwatch_event_target" "redis_idle_connection_cleanup" {
 
   target_id = "${var.name}-redis-idle-connection-cleanup"
   rule      = aws_cloudwatch_event_rule.redis_idle_connection_cleanup[0].name
-  arn       = module.redis_connection_cleanup.this_lambda_function_arn
+  arn       = module.redis_connection_cleanup.lambda_function_arn
 }
 
 resource "aws_cloudwatch_event_rule" "redis_idle_connection_cleanup" {

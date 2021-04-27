@@ -10,12 +10,12 @@ resource "aws_cloudwatch_metric_alarm" "elasticache_connection_limit" {
   threshold                 = 55000
   treat_missing_data        = "missing"
   insufficient_data_actions = []
-  ok_actions                = [var.sns_alarm_topic_arn]
-  alarm_actions             = [var.sns_alarm_topic_arn]
+  ok_actions                = [var.alarm_sns_topic]
+  alarm_actions             = [var.alarm_sns_topic]
   tags                      = merge(local.common_tags, {})
 
   metric_name = "CurrConnections"
-  namespace   = "Elasticache"
+  namespace   = "AWS/ElastiCache"
   period      = 300
   statistic   = "Maximum"
 
