@@ -19,3 +19,7 @@ module "redis_idle_connection_cleanup" {
   tags = local.common_tags
 }
 ```
+
+### Future Improvements
+- Unit tests for client list response parsing in getConnectedClients
+- Support for list of secret manager arns as an environment variable for clusters/nodes requiring authentication
