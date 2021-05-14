@@ -49,7 +49,7 @@ async function closeIdleConnections(redisClient, idleClients) {
             if (!dry_run) {
                 if (idleClient.addr) {
                     await redisClient.client("kill", idleClient.addr);
-                    console.log(`Successfully closed connection: ${idleClient.addr} on ${redisClient.options.host} - idle for ${idleClient.idle}`); // TODO: Add node name. Logging looked weird. Might just be the async part getting to cloudwatch weirdly
+                    console.log(`Successfully closed connection: ${idleClient.addr} on ${redisClient.options.host} - idle for ${idleClient.idle}`);
                 } else {
                     console.log(`Client missing addr attribute:`);
                     console.log(idleClient);
