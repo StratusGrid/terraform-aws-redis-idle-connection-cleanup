@@ -10,6 +10,6 @@
   "dependencies": {
     "@aws-sdk/client-elasticache": "^3.13.1",
     "async": "^3.2.0",
-    "ioredis": "^4.25.0"
+    "ioredis": "^4.27.8"
   }
 }
