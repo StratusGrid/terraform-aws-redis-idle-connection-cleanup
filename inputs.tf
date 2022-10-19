@@ -52,7 +52,7 @@ variable "vpc_subnet_ids" {
 }
 
 variable "redis_nodes_for_alarms" {
-  type = list(string)
+  type        = list(string)
   description = "List of nodes to assign alarms to it's CurrConnection metric"
-  default = []
+  default     = []
 }
