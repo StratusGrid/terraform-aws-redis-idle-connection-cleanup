@@ -1,0 +1,48 @@
+version: ""
+
+formatter: markdown table
+
+name:  terraform-aws-redis-idle-connection-cleanup
+
+content: |-
+  # terraform-aws-redis-idle-connection-cleanup
+
+  GitHub: [StratusGrid/terraform-aws-redis-idle-connection-cleanup](https://github.com/StratusGrid/terraform-aws-redis-idle-connection-cleanup)
+
+  Lambda triggered on a scheduleto cleanup idle redis connection based on idle threshold input value.
+  Can optionally create alarms from a list of elasticache node names and sns topic arn. 
+  
+  ## Example:
+  ```hcl
+  {{ include "examples/example1.tfnot" }}
+  ```
+  ---
+  ### Future Improvements
+  - Unit tests for client list response parsing in getConnectedClients
+  - Support for list of secret manager arns as an environment variable for clusters/nodes requiring authentication
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+  ---
+
+  <span style="color:red">Note:</span> Manual changes to the README will be overwritten when the documentation is updated. To update the documentation, run `terraform-docs -c .config/.terraform-docs.yml .`
+
+sections:
+  show:
+    - resources
+    - inputs
+    - outputs
+    - providers
+    - requirements
+
+sort:
+  enabled: true
+  by: name
+
+output:
+  file: README.md
+  mode: replace
