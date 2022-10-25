@@ -1,5 +1,6 @@
 module "redis_connection_cleanup" {
-  source = "terraform-aws-modules/lambda/aws"
+  source  = "terraform-aws-modules/lambda/aws"
+  version = "4.1.3"
 
   function_name                     = "${var.name}-redis-idle-connection-cleanup"
   description                       = "Lambda for closing idle redis connections"
