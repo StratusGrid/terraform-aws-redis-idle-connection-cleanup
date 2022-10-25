@@ -141,11 +141,10 @@ async function getRedisCacheEndpoints() {
 }
 
 async function lambda_handler() {
-  await main()
-      .catch((err) => {
-          console.error(err);
-          throw new Error(`Execution Error: See Logs for More Details: ${err}`);
-      });
+  await main().catch((err) => {
+    console.error(err);
+    throw new Error(`Execution Error: See Logs for More Details: ${err}`);
+  });
   return "ok";
 }
 
