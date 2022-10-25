@@ -106,7 +106,7 @@ async function getConnectedClients(redisClient) {
       }
     });
 
-+    if (Object.keys(client).length > 0) {
+    if (Object.keys(client).length > 0) {
       // Only adding client if attributes were found
       clients.push(client);
     }
