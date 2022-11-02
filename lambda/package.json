@@ -8,7 +8,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@aws-sdk/client-elasticache": "^3.13.1",
+    "@aws-sdk/client-elasticache": "^3.26.0",
     "async": "^3.2.2",
     "ioredis": "^4.27.8"
   }
