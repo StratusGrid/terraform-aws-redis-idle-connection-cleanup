@@ -1,5 +1,6 @@
 module "redis_connection_cleanup" {
-  source = "terraform-aws-modules/lambda/aws"
+  source  = "terraform-aws-modules/lambda/aws"
+  version = "4.1.3"
 
   function_name                     = "${var.name}-redis-idle-connection-cleanup"
   description                       = "Lambda for closing idle redis connections"
@@ -35,7 +36,7 @@ module "redis_connection_cleanup" {
 
 resource "aws_lambda_permission" "allow_sns" {
   count = var.schedule_expression == "" ? 0 : 1
-  
+
   statement_id  = "AllowExecutionFromSns"
   action        = "lambda:InvokeFunction"
   function_name = module.redis_connection_cleanup.lambda_function_arn
